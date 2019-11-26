@@ -13,6 +13,7 @@ class Stack:
 
     def peek(self):
         return self.items[len(items)-1]
+    
     def size(self):
         return len(self.items)
 
@@ -56,11 +57,4 @@ class Stack:
                     text += symbolString[index]     
                 index += 1
 
-
-class myDict(dict):
-    def __init__(self, name, level, children):
-        self._dict = {'Name':name, 'level':level, 'children':children}
-
-    def add(id, val):
-        self._dict[id] = val
 
