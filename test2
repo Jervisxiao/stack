@@ -1,0 +1,25 @@
+class Solution:
+      def topKFrequent(self, nums, k: int):
+          if k<0 or k>len(nums): return []
+          from queue import PriorityQueue
+          from collections import defaultdict
+          queue = PriorityQueue()
+          d = defaultdict(int)
+          res = []
+          for i in nums:
+              d[i]+=1
+          d = list(d.items())
+          print(d)
+          for i in range(len(d)):
+              queue.put([-d[i][1],d[i][0]])
+          for i in range(k):
+              res.append(queue.get()[1])
+          return res
+
+      def worker():
+          while True:
+              item = q.get()
+              if item is None:
+                  break
+              do_work(item)
+              q.task_done()
